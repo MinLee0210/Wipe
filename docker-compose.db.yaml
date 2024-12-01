@@ -1,0 +1,14 @@
+services:
+  mongodb:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_volume:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: wipe
+      MONGO_INITDB_ROOT_PASSWORD: wipe
+volumes:
+  mongodb_data_volume:
+    external: true
